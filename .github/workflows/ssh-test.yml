@@ -1,0 +1,12 @@
+name: SSH Connection Test
+
+on: [push]
+
+jobs:
+  ssh-connection-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test SSH Connection with Verbose Output
+      run: |
+        ssh -vvv -o BatchMode=yes -o ConnectTimeout=5 -p 22 boss@kaiyuanshe.cn
+
